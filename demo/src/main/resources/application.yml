@@ -5,9 +5,9 @@ server:
 
 spring:
   datasource:
-    password:
     url: jdbc:postgresql://localhost:5432/registration
-    username:
+    username: postgres  # Corrected placement of username
+    password: 12345
   jpa:
     hibernate:
       ddl-auto: update
@@ -16,3 +16,6 @@ spring:
         dialect: org.hibernate.dialect.PostgreSQLDialect
         format_sql: true
     show-sql: true
+
+  resources:
+    static-locations=classpath:/static/,file:uploads/:

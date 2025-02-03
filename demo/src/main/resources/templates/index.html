@@ -1,74 +1,186 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Home Page</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-
-        header {
-            background-color: #4CAF50;
-            color: white;
-            padding: 15px 10px;
-            text-align: center;
-        }
-
-        nav {
-            display: flex;
-            justify-content: center;
-            background-color: #333;
-        }
-
-        nav a {
-            color: white;
-            padding: 14px 20px;
-            text-decoration: none;
-            text-align: center;
-        }
-
-        nav a:hover {
-            background-color: #ddd;
-            color: black;
-        }
-
-        main {
-            padding: 20px;
-        }
-
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 10px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-    </style>
+    <link rel="stylesheet" href="/css/index.css">
 </head>
 <body>
-    <header>
-        <h1>Welcome to My Home Page</h1>
-    </header>
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#contact">Contact</a>
-    </nav>
-    <main>
-        <h2>About Me</h2>
-        <p>This is a paragraph about me. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque nisl ut sapien interdum, nec ullamcorper velit dapibus. Sed ac vestibulum libero, nec tempor felis.</p>
-        <h2>Services</h2>
-        <p>These are the services I offer. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque nisl ut sapien interdum, nec ullamcorper velit dapibus. Sed ac vestibulum libero, nec tempor felis.</p>
-    </main>
-    <footer>
+
+<body class="flex">
+<!-- Sidebar -->
+<div class="sidebar w-20 h-screen flex flex-col items-center py-4">
+    <div class="mb-8">
+        <img alt="Logo" class="rounded-full" height="40" src="" width="40"/>
+    </div>
+    <div class="flex flex-col space-y-6">
+        <i class="fas fa-home text-gray-400 text-xl">
+        </i>
+        <i class="fas fa-chart-line text-gray-400 text-xl">
+        </i>
+        <i class="fas fa-bell text-gray-400 text-xl">
+        </i>
+        <i class="fas fa-cog text-gray-400 text-xl">
+        </i>
+    </div>
+</div>
+<!-- Main Content -->
+<div class="flex-1 p-6">
+    <!-- Header -->
+    <div class="flex items-center justify-between mb-8">
+        <div class="flex items-center space-x-4">
+            <img alt="User Avatar" class="rounded-full" height="40" src="https://storage.googleapis.com/a1aa/image/7J4UrT6BMMbkGRV9jeAAcHMZEzBe3VinG7WIYTSWSf2vBXYnA.jpg" width="40"/>
+            <div>
+                <p class="d-inline">Logged in as: <span th:text="${username}">Guest</span></p>
+            </div>
+        </div>
+        <i class="fas fa-bell text-gray-400 text-xl">
+        </i>
+    </div>
+    <!-- Welcome Message -->
+    <div class="mb-8">
+        <h1 class="text-3xl font-semibold">
+            Welcome back, Soharab
+        </h1>
+        <p class="text-gray-400">
+            Track your finances and achieve your financial goals.
+        </p>
+    </div>
+    <!-- Cards -->
+    <div class="grid grid-cols-3 gap-6 mb-8">
+        <div class="highlight-card">
+            <p class="text-gray-400">
+                Total Reach
+            </p>
+            <h2 class="text-3xl font-semibold">
+                2,340,560
+            </h2>
+            <p class="text-gray-400">
+                vs. last month +8%
+            </p>
+        </div>
+        <div class="card">
+            <p class="text-gray-400">
+                Active Campaigns
+            </p>
+            <h2 class="text-3xl font-semibold">
+                15
+            </h2>
+            <p class="text-gray-400">
+                vs. last month +10%
+            </p>
+        </div>
+        <div class="card">
+            <p class="text-gray-400">
+                Engagement Rate
+            </p>
+            <h2 class="text-3xl font-semibold">
+                14.3%
+            </h2>
+            <p class="text-gray-400">
+                vs. last month +5%
+            </p>
+        </div>
+    </div>
+    <!-- Overview Interaction -->
+    <div class="card mb-8">
+        <div class="flex items-center justify-between mb-4">
+            <p class="text-gray-400">
+                Overview Interaction
+            </p>
+            <div class="flex items-center space-x-2">
+                <p class="text-gray-400">
+                    Weekly
+                </p>
+                <i class="fas fa-chevron-down text-gray-400">
+                </i>
+            </div>
+        </div>
+        <h2 class="text-3xl font-semibold mb-4">
+            9,458,980
+        </h2>
+        <p class="text-gray-400">
+            Total Interaction
+        </p>
+        <div class="h-32 bg-gray-800 rounded-lg mt-4">
+        </div>
+    </div>
+    <!-- Analysis Type Market -->
+    <div class="grid grid-cols-2 gap-6 mb-8">
+        <div class="card">
+            <p class="text-gray-400">
+                Analysis Type Market
+            </p>
+            <h2 class="text-3xl font-semibold">
+                30,987,153
+            </h2>
+            <div class="flex items-center space-x-4 mt-4">
+                <div class="flex items-center space-x-2">
+                    <div class="w-3 h-3 bg-blue-500 rounded-full">
+                    </div>
+                    <p class="text-gray-400">
+                        Domestic
+                    </p>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <div class="w-3 h-3 bg-purple-500 rounded-full">
+                    </div>
+                    <p class="text-gray-400">
+                        International
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="highlight-card">
+            <p class="text-gray-400">
+                Post Analysis
+            </p>
+            <h2 class="text-3xl font-semibold">
+                The Secret Behind Eye-Catching Design
+            </h2>
+            <div class="flex items-center space-x-4 mt-4">
+                <p class="text-gray-400">
+                    Posting date
+                </p>
+                <p class="text-gray-400">
+                    18/09/2024
+                </p>
+                <p class="text-gray-400">
+                    Platform
+                </p>
+                <p class="text-blue-500">
+                    LinkedIn
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- Post -->
+    <div class="card">
+        <div class="flex items-center justify-between mb-4">
+            <p class="text-gray-400">
+                Post
+            </p>
+            <div class="flex items-center space-x-2">
+                <p class="text-gray-400">
+                    Last Update
+                </p>
+                <i class="fas fa-chevron-down text-gray-400">
+                </i>
+            </div>
+        </div>
+        <div class="flex items-center space-x-4">
+            <i class="fas fa-search text-gray-400">
+            </i>
+            <input class="bg-transparent text-gray-400 focus:outline-none" placeholder="Search" type="text"/>
+        </div>
+    </div>
+</div>
+</body>
+
+<footer>
         <p>Footer Content &copy; 2024</p>
     </footer>
+    </main>
 </body>
 </html>
